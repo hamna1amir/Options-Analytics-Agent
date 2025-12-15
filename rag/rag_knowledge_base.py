@@ -92,8 +92,6 @@ def create_document_text(options_data: dict, ticker: str, date: str) -> str:
     
     return text.strip()
 
-# ==================== ChromaDB 操作 ====================
-
 def get_or_create_collection():
     """获取或创建 ChromaDB collection
     
@@ -210,8 +208,6 @@ def search_chromadb(
     except Exception as e:
         print(f"❌ Error searching ChromaDB: {e}")
         return []
-
-# ==================== SQLite 操作 ====================
 
 def init_sqlite_db():
     """初始化 SQLite 数据库"""
@@ -437,14 +433,9 @@ def detect_options_anomaly(
         异动列表，按相似度从低到高排序（相似度越低 = 异动越大）
     """
     try:
-        # 获取 ChromaDB collection
         collection = get_or_create_collection()
-        
-        # 步骤1: 获取参考数据
         conn = sqlite3.connect(SQLITE_DB_PATH)
         cursor = conn.cursor()
-        
-        # 从 SQLite 获取参考数据
         cursor.execute('''
             SELECT id, ticker, date, total_contracts, calls_count, puts_count,
                    strike_min, strike_max, avg_strike, data_json, timestamp

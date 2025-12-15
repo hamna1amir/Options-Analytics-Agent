@@ -13,12 +13,6 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
-# 注意：不在模块级别导入 search_tools，避免循环导入
-# from search_tools import search_options  # ❌ 会导致循环导入
-# 改为在函数内部导入 ✅
-
-# ==================== 数据采集工具 ====================
-
 @tool
 def collect_and_store_options(
     ticker: str,
@@ -124,12 +118,7 @@ def batch_collect_options(
     Example:
         batch_collect_options("AAPL,TSLA,MSFT", "2025-11", 300)
     """
-    # 延迟导入
-    from search_tools import search_options
-    from rag_tools import store_options_data
-    
     try:
-        # 解析 tickers
         ticker_list = [t.strip().upper() for t in tickers.split(',')]
         
         print(f"\n🚀 Batch collection for {len(ticker_list)} tickers...")
@@ -199,9 +188,6 @@ def collect_date_range(
     Example:
         collect_date_range("AAPL", "2025-11", "2026-01", 300)
     """
-    # 延迟导入
-    from search_tools import search_options
-    from rag_tools import store_options_data
     
     try:
         print(f"\n📅 Collecting date range for {ticker}: {start_date} to {end_date}...")
@@ -352,9 +338,6 @@ def auto_update_watchlist(tickers: str, date: str = None) -> str:
     Example:
         auto_update_watchlist("AAPL,TSLA,MSFT,NVDA")
     """
-    # 延迟导入
-    from search_tools import search_options
-    from rag_tools import store_options_data
     
     try:
         # 如果没有指定日期，使用当前月

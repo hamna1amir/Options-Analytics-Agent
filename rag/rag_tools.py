@@ -26,7 +26,6 @@ from rag_knowledge_base import (
     get_from_sqlite
 )
 
-# ==============================================================================
 # LLM Summarizer for Enhanced RAG
 # ==============================================================================
 # Initialize LLM for post-retrieval summarization
@@ -38,7 +37,6 @@ def get_summarizer_llm():
     if _summarizer_llm is None:
         _summarizer_llm = init_chat_model("gpt-4o-mini", model_provider="openai")
     return _summarizer_llm
-
 
 def summarize_retrieval_results(raw_data: str, query_context: str, result_type: str = "general") -> str:
     """

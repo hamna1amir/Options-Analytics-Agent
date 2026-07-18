@@ -2,9 +2,9 @@
 
 A sophisticated AI-powered agent for real-time stock options data analysis, visualization, and intelligent caching. Built with LangChain, LangGraph, and ChromaDB for enterprise-level financial data processing.
 
-**Author:** Leo Ji  
+**Author:**HAMNA AMIR   
 **Version:** 1.0.0  
-**Last Updated:** December 2025
+**Last Updated:**  FEB 2026
 
 ---
 

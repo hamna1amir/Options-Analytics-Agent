@@ -1,74 +1,84 @@
-# Week 1 - Learning Examples
+# Week 1 – Learning Examples
 
-**Author:** Leo Ji
+**Author:** Hamna Amir
 
-这些是学习 LangGraph 的示例文件。
+These are learning examples for understanding and practicing **LangGraph** concepts.
 
-## ⚠️ 重要：环境变量设置
+## ⚠️ Important: Environment Variable Setup
 
-所有文件现在都从 `.env` 文件读取 API keys，不再硬编码。
+All example files now read API keys from the `.env` file instead of using hardcoded values.
 
-**在运行任何文件之前，请确保项目根目录有 `.env` 文件：**
+**Before running any example, make sure you have a `.env` file in the project root directory:**
 
 ```bash
-# .env 文件内容
+# .env file
 OPENAI_API_KEY=your_openai_api_key_here
 TAVILY_API_KEY=your_tavily_api_key_here
 POLYGON_API_KEY=your_polygon_api_key_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
 
-## 📁 文件列表
+## 📁 File Overview
 
 ### 1. `first_simple_openai_agent.py`
-最简单的 LangGraph agent
-- 基础的聊天机器人
-- 状态管理
-- 消息流
+
+A basic LangGraph agent demonstrating:
+
+* Basic chatbot functionality
+* State management
+* Message flow
 
 ### 2. `using_prebuilt.py`
-使用预构建组件
-- ToolNode
-- tools_condition
-- 内存管理
+
+Working with prebuilt LangGraph components:
+
+* ToolNode
+* `tools_condition`
+* Memory management
 
 ### 3. `add_tavily.py`
-添加 Tavily 搜索工具
-- 集成外部工具
-- 工具调用
-- BasicToolNode
+
+Integrating the Tavily search tool:
+
+* External tool integration
+* Tool calling
+* BasicToolNode
 
 ### 4. `added_time_travel.py`
-时间旅行功能
-- 持久化内存
-- 状态回溯
+
+Time travel functionality:
+
+* Persistent memory
+* State history and rollback
 
 ### 5. `add_customized_state.py`
-自定义状态管理
-- 扩展 State
-- 人工干预
-- Command 使用
 
-## 🚀 运行示例
+Custom state management:
+
+* Extending the application state
+* Human-in-the-loop interactions
+* Using `Command`
+
+## 🚀 Running the Examples
 
 ```bash
-# 进入 Week1 目录
+# Navigate to the Week1 directory
 cd Week1
 
-# 运行任何示例
+# Run any example
 python3 first_simple_openai_agent.py
 ```
 
-## 📚 学习路径
+## 📚 Recommended Learning Path
 
-建议按以下顺序学习：
-1. `first_simple_openai_agent.py` - 基础
-2. `using_prebuilt.py` - 预构建组件
-3. `add_tavily.py` - 工具集成
-4. `added_time_travel.py` - 持久化
-5. `add_customized_state.py` - 高级状态管理
+Follow these examples in order for the best learning experience:
+
+1. `first_simple_openai_agent.py` – LangGraph fundamentals
+2. `using_prebuilt.py` – Prebuilt components
+3. `add_tavily.py` – Tool integration
+4. `added_time_travel.py` – Persistent memory
+5. `add_customized_state.py` – Advanced state management
 
 ---
 
-**注意：** 这些是学习示例，生产环境请使用项目根目录的 `agent_main.py`。
-
+**Note:** These examples are intended for learning purposes only. For the production-ready implementation, use the project's main entry point: `agent_main.py`.
